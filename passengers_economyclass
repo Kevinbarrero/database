@@ -1,0 +1,12 @@
+select passenger_id, passenger_name
+from tickets
+         join
+     (select distinct(ticket_no) as ticket_no
+      from (select *
+            from flights
+            where arrival_airport = 'PES'
+              and scheduled_departure between '2017-09-11' and '2017-09-12') as pes_airport
+               join seats on pes_airport.aircraft_code = seats.aircraft_code
+               join ticket_flights on pes_airport.flight_id = ticket_flights.flight_id
+      where seats.fare_conditions = 'Economy') as ticket_number
+     on ticket_number.ticket_no = tickets.ticket_no;
