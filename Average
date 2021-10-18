@@ -1,0 +1,2 @@
+SELECT AVG(bookings.bookings.total_amount)
+FROM bookings.bookings
