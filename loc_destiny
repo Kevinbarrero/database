@@ -1,0 +1,7 @@
+CREATE TABLE pos_helper as SELECT c.city->>'ru' as city
+     , c.airport_name
+     , c.coordinates[0] as latitude
+     , c.coordinates[1] as longitude
+     
+FROM bookings.airports_data c
+WHERE (c.city-> 'ru')::jsonb ? 'Чебоксары' or (c.city-> 'ru')::jsonb ? 'Анадырь' ;
