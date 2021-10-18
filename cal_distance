@@ -1,0 +1,4 @@
+SELECT bookings.calculate_distance((64.73490142822266)::float
+,(177.74099731445312)::float
+,(56.090301513671875)::FLOAT
+,(47.3473014831543)::FLOAT, 'K')
