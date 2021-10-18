@@ -1,0 +1,2 @@
+SELECT MIN(bookings.bookings.total_amount)
+FROM bookings.bookings
