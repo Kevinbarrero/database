@@ -1,0 +1,5 @@
+SELECT passenger_name, COUNT(passenger_name) AS total  
+FROM tickets 
+INNER JOIN bookings ON tickets.book_ref = bookings.book_ref where bookings.book_date >= '2017-06-24 00:00:00'::timestamp and bookings.book_date < '2017-06-25 00:00:00' ::timestamp 
+GROUP BY passenger_name  
+ORDER BY total DESC
